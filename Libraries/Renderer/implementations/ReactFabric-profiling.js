@@ -6892,7 +6892,7 @@ function performConcurrentWorkOnRoot(root, didTimeout) {
   currentEventTime = -1;
   currentEventTransitionLane = 0;
   if (0 !== (executionContext & 6))
-    throw Error("Should not already be working.");
+    throw Error("Should not already be working.7");
   var originalCallbackNode = root.callbackNode;
   if (flushPassiveEffects() && root.callbackNode !== originalCallbackNode)
     return null;
@@ -7146,7 +7146,7 @@ function performSyncWorkOnRoot(root) {
   currentUpdateIsNested = nestedUpdateScheduled;
   nestedUpdateScheduled = !1;
   if (0 !== (executionContext & 6))
-    throw Error("Should not already be working.");
+    throw Error("Should not already be working.8");
   flushPassiveEffects();
   var lanes = getNextLanes(root, 0);
   if (0 === (lanes & 1)) return ensureRootIsScheduled(root, now()), null;
@@ -7583,7 +7583,7 @@ function commitRootImpl(
   do flushPassiveEffects();
   while (null !== rootWithPendingPassiveEffects);
   if (0 !== (executionContext & 6))
-    throw Error("Should not already be working.");
+    throw Error("Should not already be working.9");
   transitions = root.finishedWork;
   var lanes = root.finishedLanes;
   if (null === transitions) return null;

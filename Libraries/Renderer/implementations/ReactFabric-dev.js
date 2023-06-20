@@ -20247,7 +20247,7 @@ function performConcurrentWorkOnRoot(root, didTimeout) {
   currentEventTransitionLane = NoLanes;
 
   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {
-    throw new Error("Should not already be working.");
+    throw new Error("Should not already be working.1");
   } // Flush any pending passive effects before deciding which lanes to work on,
   // in case they schedule additional work.
 
@@ -20653,7 +20653,7 @@ function performSyncWorkOnRoot(root) {
   }
 
   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {
-    throw new Error("Should not already be working.");
+    throw new Error("Should not already be working.2");
   }
 
   flushPassiveEffects();
@@ -21271,7 +21271,7 @@ function commitRootImpl(
   flushRenderPhaseStrictModeWarningsInDEV();
 
   if ((executionContext & (RenderContext | CommitContext)) !== NoContext) {
-    throw new Error("Should not already be working.");
+    throw new Error("Should not already be working.3");
   }
 
   var finishedWork = root.finishedWork;
